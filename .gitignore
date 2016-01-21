@@ -77,3 +77,13 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.pdb
+Thread/Debug/vc140.idb
+*.log
+Thread/Debug/Thread.tlog/CL.read.1.tlog
+*.tlog
+Thread/Debug/linearallocator.obj.enc
+*.opendb
+Thread.sdf
+*.ipch
+Debug/Thread.ilk

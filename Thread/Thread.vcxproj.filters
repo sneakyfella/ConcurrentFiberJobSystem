@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Memory">
+      <UniqueIdentifier>{13a1405b-5400-457f-8177-21ad19c107fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Fiber">
+      <UniqueIdentifier>{807c275c-3753-4338-ba1f-64bd3e24d41b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread">
+      <UniqueIdentifier>{e35ff195-91bc-476a-a826-de7defcbb5f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Job">
+      <UniqueIdentifier>{b6190458-0e66-44aa-8cc1-5d2ea0834126}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{bdf6d2e5-1fad-49ff-8777-248dec8bc591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Containers">
+      <UniqueIdentifier>{131893d5-974e-49c0-b0a7-8ba8abbae8f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory\ConcurrentMemory">
+      <UniqueIdentifier>{12f13e7c-7d93-4ee8-9739-5b6a1d821f50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug">
+      <UniqueIdentifier>{d4d3e178-ae07-4473-88fe-4e289950c0fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{7872ddb1-1775-41a9-8a55-7b88dd06cc65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math\MathCompares">
+      <UniqueIdentifier>{6ab8ce58-152b-4e9f-9f3d-49432255bbc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExecutionStages">
+      <UniqueIdentifier>{5dacea03-529c-4b99-a63a-9dd0d5fe3ea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExecutionStages\FrameParam">
+      <UniqueIdentifier>{fe857ac5-322b-4649-8213-031062146393}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDefs.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ForwardDeclarations.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearAllocator.h">
+      <Filter>Source Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Fiber.h">
+      <Filter>Source Files\Fiber</Filter>
+    </ClInclude>
+    <ClInclude Include="FiberManager.h">
+      <Filter>Source Files\Fiber</Filter>
+    </ClInclude>
+    <ClInclude Include="JThread.h">
+      <Filter>Source Files\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadManager.h">
+      <Filter>Source Files\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Job.h">
+      <Filter>Source Files\Job</Filter>
+    </ClInclude>
+    <ClInclude Include="JobScheduler.h">
+      <Filter>Source Files\Job</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocator.h">
+      <Filter>Source Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeListAllocator.h">
+      <Filter>Source Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="StackAllocator.h">
+      <Filter>Source Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Assert.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AllocatorAlignmentFunctions.h">
+      <Filter>Source Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadLocalStorage.h">
+      <Filter>Source Files\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadTypeDefs.h">
+      <Filter>Source Files\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Noncopyable.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcurrentQueue.h">
+      <Filter>Source Files\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="TaggedHeap.h">
+      <Filter>Source Files\Memory\ConcurrentMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryBlock.h">
+      <Filter>Source Files\Memory\ConcurrentMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvenienceMacros.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalStorage.h">
+      <Filter>Source Files\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseProfiler.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseLogger.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLogger.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionLogger.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="MathCompares.h">
+      <Filter>Source Files\Math\MathCompares</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameManager.h">
+      <Filter>Source Files\ExecutionStages\FrameParam</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameParam.h">
+      <Filter>Source Files\ExecutionStages\FrameParam</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MathFunctions.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="ExecutionStage.h">
+      <Filter>Source Files\ExecutionStages</Filter>
+    </ClInclude>
+    <ClInclude Include="Executor.h">
+      <Filter>Source Files\ExecutionStages</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearAllocator.cpp">
+      <Filter>Source Files\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Fiber.cpp">
+      <Filter>Source Files\Fiber</Filter>
+    </ClCompile>
+    <ClCompile Include="FiberManager.cpp">
+      <Filter>Source Files\Fiber</Filter>
+    </ClCompile>
+    <ClCompile Include="JThread.cpp">
+      <Filter>Source Files\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadManager.cpp">
+      <Filter>Source Files\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="Job.cpp">
+      <Filter>Source Files\Job</Filter>
+    </ClCompile>
+    <ClCompile Include="JobScheduler.cpp">
+      <Filter>Source Files\Job</Filter>
+    </ClCompile>
+    <ClCompile Include="Allocator.cpp">
+      <Filter>Source Files\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeListAllocator.cpp">
+      <Filter>Source Files\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="StackAllocator.cpp">
+      <Filter>Source Files\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Assert.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryBlock.cpp">
+      <Filter>Source Files\Memory\ConcurrentMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="TaggedHeap.cpp">
+      <Filter>Source Files\Memory\ConcurrentMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalStorage.cpp">
+      <Filter>Source Files\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseLogger.cpp">
+      <Filter>Source Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseProfiler.cpp">
+      <Filter>Source Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionLogger.cpp">
+      <Filter>Source Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameManager.cpp">
+      <Filter>Source Files\ExecutionStages\FrameParam</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameParam.cpp">
+      <Filter>Source Files\ExecutionStages\FrameParam</Filter>
+    </ClCompile>
+    <ClCompile Include="ExecutionStage.cpp">
+      <Filter>Source Files\ExecutionStages</Filter>
+    </ClCompile>
+    <ClCompile Include="Executor.cpp">
+      <Filter>Source Files\ExecutionStages</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Vector2.inl">
+      <Filter>Source Files\Math</Filter>
+    </None>
+    <None Include="Vector3.inl">
+      <Filter>Source Files\Math</Filter>
+    </None>
+  </ItemGroup>
+</Project>
