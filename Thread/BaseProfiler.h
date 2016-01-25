@@ -34,4 +34,3 @@ BaseProfiler::ProfileBegin(begin##__FUNCTION__);
 #define PROFILER_END_W_NAME(name)\
 BaseProfiler::ProfileEnd(end##__FUNCTION__);\
 FunctionLogger::Instance().LogFunctionDuration(name, std::chrono::duration<double, std::milli>(end##__FUNCTION__ - begin##__FUNCTION__).count());
-//Stdout << std::chrono::duration<double, std::milli>(end##__FUNCTION__ - begin##__FUNCTION__).count() << "ms" << Stdendl;

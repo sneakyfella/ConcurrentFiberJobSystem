@@ -9,11 +9,6 @@ public:
 	FunctionLogger(void);
 	virtual ~FunctionLogger(void);
 
-	//struct FunctionLog
-	//{
-	//	String Name;
-	//	std::chrono::steady_clock::time_point  Time;
-	//};
 
 	void LogFunctionDuration(const String name, Float64 duration);
 
@@ -21,10 +16,10 @@ protected:
 	virtual void WriteToFile(const Char * msg, const Char * file);
 private:
 
+    typedef String                                  FunctionName;
+    typedef concurrency::concurrent_vector<Float64> FunctionTimeStamps;
 	
-	concurrency::concurrent_unordered_map<String, concurrency::concurrent_vector<Float64>> FunctionLog;
-
-	//std::unordered_map < String, concurrency::concurrent_vector<Float64> >  FunctionLog;
+	concurrency::concurrent_unordered_map<FunctionName, FunctionTimeStamps> FunctionLog;
 
 	DECLARE_SINGLETON(FunctionLogger);
 };

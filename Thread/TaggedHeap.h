@@ -6,6 +6,7 @@
 class TaggedHeap
 {
 public:
+
 	TaggedHeap(size_t pageSize = KILOBYTES(2));
 	~TaggedHeap();
 
