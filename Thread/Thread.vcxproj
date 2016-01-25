@@ -181,6 +181,7 @@
     <ClInclude Include="ThreadManager.h" />
     <ClInclude Include="ThreadTypeDefs.h" />
     <ClInclude Include="TypeDefs.h" />
+    <ClInclude Include="TypeInfo.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
   </ItemGroup>

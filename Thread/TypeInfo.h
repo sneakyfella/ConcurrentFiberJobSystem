@@ -15,37 +15,16 @@
 * limitations under the License.
 */
 #pragma once
+#include "ForwardDeclarations.h"
+#define DECLARE_TYPE(type)\
+public:\
+std::string GetType(void) const {\
+    return typeid(*this).name();\
+}\
+size_t GetHash(void) {\
+    return typeid(*this).hash_code();\
+}\
+bool operator==(const type& rhs) const{\
+    return GetType() == rhs.GetType();\
+}\
 
-#include "TypeDefs.h"
-#include "Config.h"
-#include "ConvenienceMacros.h"
-
-class Noncopyable;
-class Thread;
-class ThreadManager;
-
-#include <cassert>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <cstdarg>
-#include <vector>
-#include <map>
-#include <unordered_map>
-#include <string>
-#include <set>
-#include <list>
-#include <deque>
-#include <queue>
-#include <bitset>
-#include <algorithm>
-#include <functional>
-#include <limits>
-#include <fstream>
-#include <iostream>
-#include <iomanip>
-#include <sstream>
-#include <initializer_list>
-#include <chrono>
-#include <ctime>
-#include <thread>
