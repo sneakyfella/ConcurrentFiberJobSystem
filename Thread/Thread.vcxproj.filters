@@ -171,6 +171,9 @@
     <ClInclude Include="TypeInfo.h">
       <Filter>Source Files\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="ThreadUtils.h">
+      <Filter>Source Files\Thread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
