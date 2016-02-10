@@ -12,7 +12,7 @@
 #include "Singleton.h"
 #include "TypeDefs.h"
 #include "Noncopyable.h"
-
+#include "ServiceRegistry.h"
 #include "ThreadTypeDefs.h"
 
 
@@ -29,6 +29,10 @@
 #include "StackAllocator.h"
 #include "TaggedHeap.h"
 
+// Objects
+#include "Object.h"
+#include "ObjectComponent.h"
+#include "ObjectManager.h"
 
 // Frames
 #include "FrameParam.h"

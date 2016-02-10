@@ -2,6 +2,8 @@
 //
 // Usage: SetThreadName ((DWORD)-1, "MainThread");
 //
+// Cool stuff, this apparently changes the name of the thread,
+// So when using VS debugger for threads, you can see names.
 #include <windows.h>
 const DWORD MS_VC_EXCEPTION = 0x406D1388;
 

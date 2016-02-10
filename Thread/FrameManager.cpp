@@ -12,7 +12,9 @@ void FrameManager::Initialise(void)
 {
     for (; mCurrFrameNumber < 3; ++mCurrFrameNumber)
     {
-        mFrames.emplace(mCurrFrameNumber, FrameParam(mCurrFrameNumber));
+        FrameParam *fp = new FrameParam();
+        fp->SetFrameNumber(mCurrFrameNumber);
+        mFrames.emplace(mCurrFrameNumber, fp);
     }
 }
 
@@ -36,8 +38,10 @@ void FrameManager::Update(Float32 dt)
 
 void FrameManager::GenerateNewFrame(void)
 {
-    ++mCurrFrameNumber;
-    mFrames.emplace(mCurrFrameNumber, FrameParam(mCurrFrameNumber));
+    FrameParam *fp = new FrameParam();
+    fp->SetFrameNumber(++mCurrFrameNumber);
+
+    mFrames.emplace(mCurrFrameNumber, fp);
 }
 
 void FrameManager::DumpOldestFrame(void)
@@ -49,5 +53,5 @@ void FrameManager::DumpOldestFrame(void)
 FrameParam * FrameManager::GetCurrentFrame(void)
 {
     //mFrames[mCurrFrameNumber];
-    return &mFrames[mCurrFrameNumber];
+    return mFrames[mCurrFrameNumber];
 }

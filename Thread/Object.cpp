@@ -15,45 +15,27 @@
 * limitations under the License.
 */
 #include "stdafx.h"
-#include "Job.h"
+#include "Object.h"
 
-
-Job::Job()
-: mFunction(nullptr)
+Object::Object()
+{
+}
+Object::~Object()
 {
 }
 
-Job::~Job()
+void Object::Initialise(void)
 {
+    CBL_FORRANGEREF(ComponentTable, it)
+    {
+        it.second->Initialise();
+    }
 }
 
-void Job::InitialiseJob(JobFunction func, void * args, Uint32 id,  const char *name, ThreadPriority prio)
+void Object::Shutdown(void)
 {
-	mFunction = func;
-	mJobArgs = args;
-	mID = id;
-	mPriority = prio;
-	//strcpy(mName, name);
-	mName = name;
-}
-
-void Job::ExecuteJob(void)
-{
-	if (mFunction)
-	{
-#if CONSOLE_PRINT_MODE
-		Stdout << mName << Stdendl;
-#endif
-		mFunction(mJobArgs);
-	}
-}
-
-Uint32 Job::GetJobID(void) const
-{
-	return mID;
-}
-
-ThreadPriority Job::GetJobPriority(void) const
-{
-	return mPriority;
+    CBL_FORRANGEREF(ComponentTable, it)
+    {
+        it.second->Shutdown();
+    }
 }

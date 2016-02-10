@@ -2,6 +2,7 @@
 #include "ForwardDeclarations.h"
 #include "ThreadTypeDefs.h"
 #include "JobScheduler.h"
+
 struct ThreadLocalStorage
 {
 	//Argument package

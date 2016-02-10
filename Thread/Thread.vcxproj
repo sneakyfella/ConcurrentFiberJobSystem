@@ -152,6 +152,8 @@
     <ClInclude Include="ConcurrentQueue.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="ConvenienceMacros.h" />
+    <ClInclude Include="Delegate.h" />
+    <ClInclude Include="Event.h" />
     <ClInclude Include="ExecutionStage.h" />
     <ClInclude Include="Executor.h" />
     <ClInclude Include="FrameManager.h" />
@@ -171,6 +173,10 @@
     <ClInclude Include="MathFunctions.h" />
     <ClInclude Include="MemoryBlock.h" />
     <ClInclude Include="Noncopyable.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectComponent.h" />
+    <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="ServiceRegistry.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StackAllocator.h" />
     <ClInclude Include="stdafx.h" />
@@ -204,6 +210,10 @@
     <ClCompile Include="JobScheduler.cpp" />
     <ClCompile Include="LinearAllocator.cpp" />
     <ClCompile Include="MemoryBlock.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectComponent.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="ServiceRegistry.cpp" />
     <ClCompile Include="StackAllocator.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

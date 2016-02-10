@@ -32,6 +32,7 @@ void FunctionLogger::LogFunctionDuration(const String name, Float64 duration)
 
 void FunctionLogger::WriteToFile(const Char * msg, const Char * file)
 {
+    // TODO : WRITE TO A DAMN FILE SON
 	for (auto & it : FunctionLog)
 	{
 		for (auto & iter : it.second)

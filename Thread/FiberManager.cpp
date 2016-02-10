@@ -56,7 +56,10 @@ void FiberManager::CreateFiberPool(void)
 		mFiberQueue.push(fHnd);
 		mFiberPool.emplace(ptr->GetFiberID(), ptr);
 
+#if CONSOLE_PRINT_MODE
 		Stdout  << "FiberID : " << ptr->GetFiberID() << Stdendl;
+#endif
+
 	}
 }
 

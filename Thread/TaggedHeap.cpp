@@ -23,11 +23,16 @@ MemoryBlock * TaggedHeap::GetMemoryBlock(const Char * tag)
 		AllocateMemoryBlocks();
 	}
 	MemoryBlock * ret = mFreeMemory.back();
+
+    // Setting
+    ret->SetTag(tag);
 	mUsedMemory[hash].push_back(ret);
 	mFreeMemory.pop_back();
 	mLock.unlock();
 	return ret;
 }
+
+
 
 void TaggedHeap::FreeMemoryBlocksWithTag(const Char * tag)
 {

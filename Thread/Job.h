@@ -35,11 +35,11 @@ class Job
 {
 public:
 	Job();
-	virtual ~Job();
+	~Job();
 
-	virtual void InitialiseJob(JobFunction func, void * args, Uint32 id, const char *name ,ThreadPriority prio = ThreadPriority::PRIORITY_MEDIUM);
+	void InitialiseJob(JobFunction func, void * args, Uint32 id, const char *name ,ThreadPriority prio = ThreadPriority::PRIORITY_MEDIUM);
 
-	virtual void ExecuteJob(void);
+	void ExecuteJob(void);
 
 	Uint32 GetJobID(void) const;
 	ThreadPriority GetJobPriority(void) const;

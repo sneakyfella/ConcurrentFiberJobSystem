@@ -24,6 +24,7 @@ struct TestShit
 void MoveTestShit(void*args)
 {
     PROFILER_BEGIN();
+
     TestShit * test = reinterpret_cast<TestShit*>(args);
     for (int i = 0; i < 200; ++i)
     {
@@ -106,7 +107,7 @@ int main()
 
 	DECLARE_JOBS(NestedJob, nullptr, 5);
 	JobCounter temp = ADD_JOB_ARRAY(NestedJob, 5);
-
+    
 	getchar();
 
 

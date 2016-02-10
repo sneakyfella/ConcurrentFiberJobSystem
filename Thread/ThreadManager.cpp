@@ -45,10 +45,14 @@ void ThreadManager::RunThreads(void)
 {
 	for (auto& thd : mThreadPool)
 	{
+#if CONSOLE_DEBUG_PRINT
 		if (thd.second->CBLResumeThread())
 		{
 			Stdout << "Resuming Thread Success" << thd.second->mThreadID << Stdendl;
 		}
+#else
+        thd.second->CBLResumeThread();
+#endif
 	}
 }
 

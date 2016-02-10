@@ -21,8 +21,15 @@
 #include "ConvenienceMacros.h"
 
 class Noncopyable;
+
+class Object;
+class ObjectComponent;
+class ObjectManager;
+
 class Thread;
 class ThreadManager;
+class Fiber;
+class FiberManager;
 
 #include <cassert>
 #include <cstdio>

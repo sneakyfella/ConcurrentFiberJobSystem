@@ -15,45 +15,23 @@
 * limitations under the License.
 */
 #include "stdafx.h"
-#include "Job.h"
+#include "Object.h"
+#include "ObjectComponent.h"
 
 
-Job::Job()
-: mFunction(nullptr)
+ObjectComponent::ObjectComponent()
+    : OwningObject(nullptr)
 {
 }
 
-Job::~Job()
+ObjectComponent::~ObjectComponent()
 {
 }
 
-void Job::InitialiseJob(JobFunction func, void * args, Uint32 id,  const char *name, ThreadPriority prio)
+void ObjectComponent::Initialise(void)
 {
-	mFunction = func;
-	mJobArgs = args;
-	mID = id;
-	mPriority = prio;
-	//strcpy(mName, name);
-	mName = name;
 }
 
-void Job::ExecuteJob(void)
+void ObjectComponent::Shutdown(void)
 {
-	if (mFunction)
-	{
-#if CONSOLE_PRINT_MODE
-		Stdout << mName << Stdendl;
-#endif
-		mFunction(mJobArgs);
-	}
-}
-
-Uint32 Job::GetJobID(void) const
-{
-	return mID;
-}
-
-ThreadPriority Job::GetJobPriority(void) const
-{
-	return mPriority;
 }

@@ -119,11 +119,10 @@ FIBER_START_FUNCTION_CLASS_IMPL(JobScheduler, FiberMain)
 		WaitingJob job;
 		ThreadArgPack.Scheduler->mWaitJobLock.lock();
 		// If there are waiting jobs
-			// Looking for completed jobs
+	    // Looking for completed jobs
 		bool waitingTaskReady = false;
 		std::vector<WaitingJob>::iterator it = std::find_if(ThreadArgPack.Scheduler->mWaitingJobs.begin(),
 															ThreadArgPack.Scheduler->mWaitingJobs.end(),
-															//WaitingJob());
 															[&waitingTaskReady] (const WaitingJob& job)->bool 
 															{ 
 																if (job.Counter->load() == job.Value)
@@ -153,7 +152,7 @@ FIBER_START_FUNCTION_CLASS_IMPL(JobScheduler, FiberMain)
 			ThreadArgPack.Scheduler->SwitchFiber(job.Owner);
 		}
 
-		// Else get to work on the next job
+		// No wait jobs are available, GET TO WORK on the next job
 		{
 			JobBundle nextJob;
 			if (ThreadArgPack.Scheduler->mJobQueue.try_pop(nextJob))
@@ -218,9 +217,7 @@ FIBER_START_FUNCTION_CLASS_IMPL(JobScheduler, FiberCounter)
 
 		ThreadArgPack.Scheduler->AddWaitingJob(waitJob);
 		
-		//SwitchToFiber(ThreadArgPack.NextFiber);
 		Fiber::CBLSwitchToFiber(ThreadArgPack.NextFiber);
-		//Switch
 
 	}
 }

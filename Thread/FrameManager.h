@@ -32,7 +32,7 @@ private:
 
     typedef Uint64 FrameCount;
 
-    std::unordered_map<Uint64, FrameParam>   mFrames;
+    std::unordered_map<Uint64, FrameParam *>   mFrames;
 
     DECLARE_SINGLETON(FrameManager);
 };

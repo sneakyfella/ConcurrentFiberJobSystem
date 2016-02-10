@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "FrameParam.h"
-FrameParam::FrameParam(Uint64 frameNumber)
+FrameParam::FrameParam(void)
     :mAllocator(KILOBYTES(2), TaggedHeap::Instance().GetMemoryBlock("Cool"))
-    ,mFrameNumber(frameNumber)
+    ,mFrameNumber(0)
 {
 }
 

@@ -13,7 +13,10 @@ public:
 	
 	void FlushMemoryBlock();
 
+    GETSET_AUTO(String, Tag);
+
 private:
+    String mTag;
 	const size_t mPageSize;
 	void * mMemoryBlock;
 };
