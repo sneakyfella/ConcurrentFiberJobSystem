@@ -17,7 +17,7 @@
 #pragma once
 
 #include "ForwardDeclarations.h"
-#include "DelegateImpl.h"
+#include "Delegate.h"
 
 #include <vector>
 

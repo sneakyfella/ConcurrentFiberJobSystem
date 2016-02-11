@@ -51,6 +51,8 @@ public:
 
 
 private:
+#if ALLOCATOR_DEBUG
 	void * mPrevPos;
+#endif
 	void * mCurrentPos;
 };

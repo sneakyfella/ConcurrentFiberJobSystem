@@ -32,6 +32,14 @@ MemoryBlock * TaggedHeap::GetMemoryBlock(const Char * tag)
 	return ret;
 }
 
+void TaggedHeap::ReturnMemoryBlock(MemoryBlock * ptr)
+{
+    if (ptr)
+    {
+        mFreeMemory.push_back(ptr);
+    }
+}
+
 
 
 void TaggedHeap::FreeMemoryBlocksWithTag(const Char * tag)
@@ -50,7 +58,7 @@ void TaggedHeap::FreeMemoryBlocksWithTag(const Char * tag)
 
 void TaggedHeap::FlushMemory(size_t hash)
 {
-    CBL_FORRANGEREF(mUsedMemory[hash], it)
+    J_FORRANGEREF(mUsedMemory[hash], it)
     {
         it->FlushMemoryBlock();
     }

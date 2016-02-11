@@ -30,20 +30,32 @@
 #include <queue>
 
 using namespace concurrency;
+
 class JobScheduler : Noncopyable
 {
+    /***** Public Methods *****/
 public:
+    //! Default constructor.
 	JobScheduler();
+    //! Default destructor.
 	~JobScheduler();
 
 	void Initialise(void);
 
 	void Shutdown(void);
 
+    //! Adding job method
+    //! @param job Job to be added, consisting of func ptr and arg pack
+    //! @return JobCounter counter the function must wait for before proceeding execution
 	JobCounter  AddJob(Job job);
 
+    //! Adding job array method
+    //! @param job Job array to be added, consisting of func ptr and arg pack
+    //! @return JobCounter counter the function must wait for before proceeding execution
 	JobCounter  AddJob(Uint32 numOfJobs, Job * job);
 
+    //! Adding a waiting job method, to be scanned and checked by free fibers for completion
+    //! @param waitjob  wait Job array to be added, consisting of atomic counter
 	void AddWaitingJob(WaitingJob waitjob);
 
 	static void MainThreadInit(void*args);
@@ -52,20 +64,20 @@ public:
 
 	DWORD ThreadMain(void * args);
 
-
+    //! Main fiber loop, checks for waiting jobs first, then goes on to try pop from job queue
 	static FIBER_START_FUNCTION(FiberMain);
 
+    //! Setting the thread local storage variables, like current fiber, and next fiber
 	void SwitchFiber(FiberHandle destFiber);
 
+    //! Prevents fiber contention, read comments in function for clearer idea
 	static FIBER_START_FUNCTION(FiberSwitch);
 
+    //! Halts a job function from continuing until counter it is waiting for has reached 0
 	void WaitForCounter(JobCounter & counter, Uint32 val);
 
 	static FIBER_START_FUNCTION(FiberCounter);
 
-	void Sort(void)
-	{
-	}
 	FiberManager                       mFiberPool;
 	concurrent_queue<JobBundle>              mJobQueue;
 	std::vector<WaitingJob>            mWaitingJobs;

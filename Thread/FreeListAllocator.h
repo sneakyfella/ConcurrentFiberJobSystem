@@ -20,9 +20,9 @@
 class FreeListAllocator : public BaseAllocator
 {
 public:
-	FreeListAllocator(size_t size, size_t blockSize, Uint8 alignment);
+	FreeListAllocator(size_t size, Uint8 alignment);
 
-    FreeListAllocator(size_t size, size_t blockSize, Uint8 alignment, MemoryBlock * memPool);
+    FreeListAllocator(size_t size,  Uint8 alignment, MemoryBlock * memPool);
 
 	virtual ~FreeListAllocator(void);
 
@@ -34,10 +34,22 @@ public:
 
 	
 private:
+
+    struct AllocationHeader
+    {
+        size_t Size;
+        Uint8  Adjustment;
+    };
+
+    struct FreeBlock
+    {
+        size_t     Size;
+        FreeBlock* Next;
+    };
+
 	typedef std::unordered_map<Uint32, void *> MemoryPool;
 
-
-	Uint32 mBlockSize;
+    FreeBlock * mHead;
 	MemoryPool  mUnusedPool;
 	MemoryPool  mUsedPool;
 };

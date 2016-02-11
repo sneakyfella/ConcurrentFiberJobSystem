@@ -31,6 +31,21 @@ class ThreadManager;
 class Fiber;
 class FiberManager;
 
+class Job;
+class JobScheduler;
+
+class Allocator;
+class FreeListAllocator;
+class LinearAllocator;
+class StackAllocator;
+
+class MemoryBlock;
+class TaggedHeap;
+
+class BaseLogger;
+class FunctionLogger;
+class FileLogger;
+class BaseProfiler;
 #include <cassert>
 #include <cstdio>
 #include <cstdlib>

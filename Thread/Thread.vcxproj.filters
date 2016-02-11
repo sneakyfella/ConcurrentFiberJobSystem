@@ -132,9 +132,6 @@
     <ClInclude Include="ConvenienceMacros.h">
       <Filter>Source Files\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="GlobalStorage.h">
-      <Filter>Source Files\Thread</Filter>
-    </ClInclude>
     <ClInclude Include="BaseProfiler.h">
       <Filter>Source Files\Debug</Filter>
     </ClInclude>
@@ -156,13 +153,7 @@
     <ClInclude Include="FrameParam.h">
       <Filter>Source Files\ExecutionStages\FrameParam</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>Source Files\Math</Filter>
-    </ClInclude>
     <ClInclude Include="MathFunctions.h">
-      <Filter>Source Files\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector3.h">
       <Filter>Source Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="ExecutionStage.h">
@@ -242,9 +233,6 @@
     <ClCompile Include="TaggedHeap.cpp">
       <Filter>Source Files\Memory\ConcurrentMemory</Filter>
     </ClCompile>
-    <ClCompile Include="GlobalStorage.cpp">
-      <Filter>Source Files\Thread</Filter>
-    </ClCompile>
     <ClCompile Include="BaseLogger.cpp">
       <Filter>Source Files\Debug</Filter>
     </ClCompile>
@@ -256,12 +244,6 @@
     </ClCompile>
     <ClCompile Include="FrameManager.cpp">
       <Filter>Source Files\ExecutionStages\FrameParam</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2.cpp">
-      <Filter>Source Files\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector3.cpp">
-      <Filter>Source Files\Math</Filter>
     </ClCompile>
     <ClCompile Include="FrameParam.cpp">
       <Filter>Source Files\ExecutionStages\FrameParam</Filter>
@@ -284,13 +266,5 @@
     <ClCompile Include="ServiceRegistry.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Vector2.inl">
-      <Filter>Source Files\Math</Filter>
-    </None>
-    <None Include="Vector3.inl">
-      <Filter>Source Files\Math</Filter>
-    </None>
   </ItemGroup>
 </Project>

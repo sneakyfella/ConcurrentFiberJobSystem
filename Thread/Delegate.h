@@ -47,7 +47,7 @@ public:
     }
     //! Check if delegate is empty.
     inline operator bool(void) const {
-        return mStubPtr != NULL;
+        return mStubPtr != nullptr;
     }
     //! Logical negation operator.
     inline bool operator!(void) const {
@@ -63,7 +63,7 @@ public:
     }
     //! Resets the delegate to NULL (for invalidation).
     inline void Reset(void) {
-        mStubPtr = NULL;
+        mStubPtr = nullptr;
     }
 
     /***** Internal Types *****/

@@ -30,7 +30,6 @@ public:
 public:
     //! Protected constructor.
     //! We only want the ObjectComponentManager instantiating this.
-    //! @param	hashName	ObjectComponent's hash name.
     ObjectComponent();
     // Destructor.
     virtual ~ObjectComponent();

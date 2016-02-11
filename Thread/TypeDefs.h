@@ -22,11 +22,11 @@
 
 /***** Convenience macros *****/
 //! Void macro.
-#define CBL_VOID						(void)(0)
+#define J_VOID						(void)(0)
 //! Delete a pointer and set it to null.
-#define CBL_DELETE( ptr )				{ if( ptr ) { delete ( ptr ); ( ptr )=NULL; } }
+#define J_DELETE( ptr )				{ if( ptr ) { delete ( ptr ); ( ptr )=NULL; } }
 //! Delete a pointer to an array and set it to null.
-#define CBL_DELETE_ARRAY( ptr )			{ if( ptr ) { delete [] ( ptr ); ( ptr )=NULL; } }
+#define J_DELETE_ARRAY( ptr )			{ if( ptr ) { delete [] ( ptr ); ( ptr )=NULL; } }
 
 #define KILOBYTES(num) 1024 * num
 #define MEGABYTES(num) 1024 * 1024 * num

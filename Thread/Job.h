@@ -33,19 +33,30 @@ typedef std::shared_ptr<AtomicCounter> JobCounter;
 
 class Job
 {
+    /***** Public Methods *****/
 public:
+    //! Default constructor.
 	Job();
+    //! Default destructor.
 	~Job();
-
+    //! Only Manager should be creating fibers
+    //! static function for fibers to switch to
+    //! @param	func	 Function to be jobified
+    //! @param	args	 Pointer to args used for the function (USUALLY USES HEAP ALLOCATED ARGS)
+    //! @param	id	     Job ID
+    //! @param	name	 Job Name
+    //! @param	prio	 Priority for job (TODO : not implemented yet)
 	void InitialiseJob(JobFunction func, void * args, Uint32 id, const char *name ,ThreadPriority prio = ThreadPriority::PRIORITY_MEDIUM);
-
+    //! Runs the function with args
 	void ExecuteJob(void);
 
 	Uint32 GetJobID(void) const;
 	ThreadPriority GetJobPriority(void) const;
 
 	JobFunction mFunction;
-	void * mJobArgs;
+	void      * mJobArgs;
+
+    /***** Private Members *****/
 private:
 	String mName;
 	Uint32 mID;

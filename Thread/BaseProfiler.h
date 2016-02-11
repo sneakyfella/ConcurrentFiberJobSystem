@@ -19,6 +19,7 @@
 #include "ForwardDeclarations.h"
 #include "FunctionLogger.h"
 #include "BaseLogger.h"
+
 typedef std::chrono::steady_clock::time_point Timestamp;
 
 class BaseProfiler : Noncopyable

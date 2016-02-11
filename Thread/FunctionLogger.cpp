@@ -30,6 +30,21 @@ void FunctionLogger::LogFunctionDuration(const String name, Float64 duration)
 	FunctionLog[name].push_back(duration);
 }
 
+Uint32 FunctionLogger::GetFunctionLogSize(const String name)
+{
+    return FunctionLog[name].size();
+}
+
+void FunctionLogger::ClearFunctionLog(void)
+{
+    for (auto & it : FunctionLog)
+    {
+        it.second.clear();
+    }
+
+    FunctionLog.clear();
+}
+
 void FunctionLogger::WriteToFile(const Char * msg, const Char * file)
 {
     // TODO : WRITE TO A DAMN FILE SON

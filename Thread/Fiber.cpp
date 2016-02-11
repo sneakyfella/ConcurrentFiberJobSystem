@@ -35,16 +35,6 @@ void Fiber::Shutdown(void)
 	CBLDeleteFiber();
 }
 
-FiberID Fiber::GetFiberID(void) const
-{
-	return mFiberID;
-}
-
-void Fiber::SetFiberID(FiberID id)
-{
-	mFiberID = id;
-}
-
 
 
 FiberHandle Fiber::CBLCreateFiber(FiberStartRoutine startRout, size_t stackSize, void * args, FiberID id)

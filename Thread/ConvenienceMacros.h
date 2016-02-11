@@ -277,9 +277,9 @@
 
 // Loop macros
 
-#define CBL_FORRANGE(container, iterator)\
+#define J_FORRANGE(container, iterator)\
 for(auto iterator : container)
-#define CBL_FORRANGEREF(container, iterator)\
+#define J_FORRANGEREF(container, iterator)\
 for(auto & iterator : container)
 
 

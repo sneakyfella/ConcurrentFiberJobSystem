@@ -20,35 +20,43 @@
 
 class Fiber
 {
+    /***** Public Methods *****/
 public:
+    //! Default constructor.
 	Fiber();
+    //! Default destructor.
 	~Fiber();
-
-	virtual void Initialise(void);
-
-	virtual void Shutdown(void);
-
-	FiberID GetFiberID(void) const;
-
-	FiberHandle CBLFiberHandle(void);
-
-	void SetFiberID(FiberID id);
-
+    //! Fiber initialisation method.
+	void Initialise(void);
+    //! Fiber shutdown method.
+	void Shutdown(void);
+    //! static function for fibers to switch to
+    //! @param	fiberToSwitchTo	 Fiber to switch to
 	static void CBLSwitchToFiber(FiberHandle fiberToSwitchTo);
 
-private:
+    /***** Property Methods *****/
+public:
+    GETSET_AUTO(FiberID, FiberID);
 
+    FiberHandle CBLFiberHandle(void);
+    /***** Private Methods *****/
+private:
+    //! Only Manager should be creating fibers
+    //! static function for fibers to switch to
+    //! @param	startRout	 Fiber start routine
+    //! @param	stackSize	 Fiber's stack space, 0 for default 
+    //! @param	args	 POinter to scheduler in this case, not really needed as we are using TLS
+    //! @param	id	 Arbitrary ID for debugging
+    //! @return	FiberHandle	 fiber handle 
 	FiberHandle CBLCreateFiber(FiberStartRoutine startRout, size_t stackSize, void * args, FiberID id);
 
+    //! Free handle
 	void CBLDeleteFiber(void);
-
+    //! Converts a fiber back to a thread
 	void CBLConvertFiberToThread(void);
-
+    //! Converts a thread to a fiber
 	void CBLConvertThreadToFiber(void);
 
-	
-
-	//FiberHandle CBLFiberHandle(void);
 
 	FiberID         mFiberID;
 	FiberHandle     mFiberHandle;

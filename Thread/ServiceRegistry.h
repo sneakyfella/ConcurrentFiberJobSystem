@@ -14,7 +14,7 @@
         ServiceRegistry(void);
         ~ServiceRegistry(void);
         //! Add service to container.
-        //! @see CBL_SERVICE_TYPE
+        //! @see J_SERVICE_TYPE
         //! @param	type	Service class type.
         //! @param	service	Service to object add.
         template< typename SERVICE_TYPE >

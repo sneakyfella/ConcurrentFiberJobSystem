@@ -26,7 +26,7 @@ Object::~Object()
 
 void Object::Initialise(void)
 {
-    CBL_FORRANGEREF(ComponentTable, it)
+    J_FORRANGEREF(ComponentTable, it)
     {
         it.second->Initialise();
     }
@@ -34,7 +34,7 @@ void Object::Initialise(void)
 
 void Object::Shutdown(void)
 {
-    CBL_FORRANGEREF(ComponentTable, it)
+    J_FORRANGEREF(ComponentTable, it)
     {
         it.second->Shutdown();
     }

@@ -60,6 +60,7 @@ public:
 		{
 			mCV.wait(lock);
 		}
+
 		T job = mQueue.front();
 		mQueue.pop();
 		lock.unlock();

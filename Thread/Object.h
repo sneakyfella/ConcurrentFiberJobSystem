@@ -75,7 +75,7 @@ private:
     //typedef std::unordered_map< ObjectComponent* >	ComponentTable;
 
     String mName;
-    std::unordered_map< std::string, ObjectComponent* > ComponentTable;
+    std::unordered_map< String, ObjectComponent* > ComponentTable;
 
     DECLARE_TYPE(Object);
 

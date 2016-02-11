@@ -41,14 +41,19 @@ BaseAllocator::BaseAllocator(Uint32 size, MemoryBlock * memPool)
 
 BaseAllocator::~BaseAllocator(void)
 {
-    if(!mUsingTaggedHeap)
-	    ::operator delete(mMemoryPool);
+    if (mUsingTaggedHeap)
+    {
+        // Return block to heap
+        mTaggedHeapBlock->FlushMemoryBlock();
+        GET_SINGLETON(TaggedHeap).ReturnMemoryBlock(mTaggedHeapBlock);
+    }
     else
     {
-        mTaggedHeapBlock->FlushMemoryBlock();
+        ::operator delete(mMemoryPool);
     }
 
-	ASSERT(mUsedMemory != 0 || mAllocations != 0, "Memory Leak");
+	ASSERT(mUsedMemory == 0, "Memory Leak");
+    ASSERT(mAllocations == 0, "Memory Leak");
 }
 
 void BaseAllocator::LogAllocation(Uint32 size)

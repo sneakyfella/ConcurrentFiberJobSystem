@@ -26,7 +26,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -71,6 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\Dependencies\lib</OutDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -88,10 +90,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../Dependencies;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../Dependencies/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -164,7 +169,6 @@
     <ClInclude Include="Fiber.h" />
     <ClInclude Include="FiberManager.h" />
     <ClInclude Include="ForwardDeclarations.h" />
-    <ClInclude Include="GlobalStorage.h" />
     <ClInclude Include="Job.h" />
     <ClInclude Include="JobScheduler.h" />
     <ClInclude Include="LinearAllocator.h" />
@@ -189,8 +193,6 @@
     <ClInclude Include="ThreadUtils.h" />
     <ClInclude Include="TypeDefs.h" />
     <ClInclude Include="TypeInfo.h" />
-    <ClInclude Include="Vector2.h" />
-    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Allocator.cpp" />
@@ -205,7 +207,6 @@
     <ClCompile Include="Fiber.cpp" />
     <ClCompile Include="FiberManager.cpp" />
     <ClCompile Include="FunctionLogger.cpp" />
-    <ClCompile Include="GlobalStorage.cpp" />
     <ClCompile Include="Job.cpp" />
     <ClCompile Include="JobScheduler.cpp" />
     <ClCompile Include="LinearAllocator.cpp" />
@@ -225,12 +226,6 @@
     <ClCompile Include="JThread.cpp" />
     <ClCompile Include="TaggedHeap.cpp" />
     <ClCompile Include="ThreadManager.cpp" />
-    <ClCompile Include="Vector2.cpp" />
-    <ClCompile Include="Vector3.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Vector2.inl" />
-    <None Include="Vector3.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

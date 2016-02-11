@@ -26,12 +26,12 @@ if((!exp))\
 	Ostringstream m(#msg);\
 	Assert(#exp, m.str().c_str(), __FILE__, __LINE__, __FUNCTION__);\
 }
-#define ASSERT_TRUE(exp)\
+#define J_ASSERT_TRUE(exp)\
 if((!exp))\
 {\
 	Assert(#exp, "Expression is false. Expected true.",__FILE__, __LINE__, __FUNCTION__);\
 }
-#define ASSERT_FALSE(exp)\
+#define J_ASSERT_FALSE(exp)\
 if((exp))\
 {\
 	Assert(#exp, "Expression is true. Expected false.",__FILE__, __LINE__, __FUNCTION__);\

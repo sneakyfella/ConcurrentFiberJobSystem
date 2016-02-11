@@ -28,8 +28,14 @@ public:
 
 	void LogFunctionDuration(const String name, Float64 duration);
 
+    Uint32 GetFunctionLogSize(const String name);
+
+    void ClearFunctionLog(void);
+
 protected:
 	virtual void WriteToFile(const Char * msg, const Char * file);
+
+
 private:
 
     typedef String                                  FunctionName;

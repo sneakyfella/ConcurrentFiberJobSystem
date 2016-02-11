@@ -38,6 +38,7 @@ void * LinearAllocator::Allocate(Uint32 size, Uint8 alignment)
 {
 	ASSERT(size != 0, "Size = 0");
 
+    // memaligning it to a word capture
 	Uint8 memAlign = AlignForwardAdjustment(mCurrentPos, alignment);
 
 	Uint32 memUsed = size + memAlign;

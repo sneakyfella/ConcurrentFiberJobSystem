@@ -3,6 +3,8 @@
 #include "ThreadTypeDefs.h"
 #include "JobScheduler.h"
 
+
+//! Local thread stack space convenience variables
 struct ThreadLocalStorage
 {
 	//Argument package

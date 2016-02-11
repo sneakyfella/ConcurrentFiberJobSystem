@@ -21,19 +21,25 @@
 class FiberManager
 {
 public:
+    //! Default constructor.
 	FiberManager(Uint32 fiberCount = 100);
+    //! Default destructor.
 	~FiberManager();
-
+    //! FiberManager initialisation method.
+    //! Creates the fiber pool in suspended state
 	void Initialise(void);
-
+    //! FiberManager Shutdown method.
+    //! Shutsdown the fiber pool 
 	void Shutdown(void);
 
+    //! Getting a free fiber for user method.
+    //! @return	Handle to a free fiber from fiber pool
 	FiberHandle PopFreeFiber(void);
-
+    //! Returning a free fiber for user method.
+    //! @param	hnd Handle to fiber from fiber pool
 	void PushFreeFiber(FiberHandle hnd);
 
-	typedef std::unordered_map<Uint32, Fiber *>                FiberPool;
-	typedef concurrency::concurrent_queue<FiberHandle>         FiberQueue;
+
 private:
 
 	void CreateFiberPool(void);
@@ -42,6 +48,9 @@ private:
 
 	Uint32 mFiberCount;
 
-	FiberPool  mFiberPool;
-	FiberQueue mFiberQueue;
+    typedef std::unordered_map<Uint32, Fiber *>                FiberPool;
+    typedef concurrency::concurrent_queue<FiberHandle>         FiberQueue;
+
+	FiberPool  mFiberPool; // Just for tracking purposes
+	FiberQueue mFiberQueue; // Actual queue to give to users
 };

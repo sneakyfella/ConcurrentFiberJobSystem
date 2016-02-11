@@ -45,6 +45,7 @@ void JobScheduler::Shutdown(void)
 
 JobCounter JobScheduler::AddJob(Job job)
 {
+    // Returns the atomic counter for the wait job to wait for
 	JobCounter atomCounter(new AtomicCounter());
 	atomCounter->store(1);
 
@@ -133,7 +134,6 @@ FIBER_START_FUNCTION_CLASS_IMPL(JobScheduler, FiberMain)
 
 																return false;
 															} );
-		//std::vector<WaitingJob>::iterator it = ThreadArgPack.Scheduler->mWaitingJobs.begin();
 
 		// wait job completed and has been found
 		if (it != ThreadArgPack.Scheduler->mWaitingJobs.end())
@@ -148,7 +148,8 @@ FIBER_START_FUNCTION_CLASS_IMPL(JobScheduler, FiberMain)
 		}
 		ThreadArgPack.Scheduler->mWaitJobLock.unlock();
 
-		if (waitingTaskReady) {
+		if (waitingTaskReady) 
+        {
 			ThreadArgPack.Scheduler->SwitchFiber(job.Owner);
 		}
 
