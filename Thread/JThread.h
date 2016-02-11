@@ -33,8 +33,11 @@ public:
 	void Shutdown(void);
 
 	ThreadID GetThreadID(void) const;
-
+    //! Getter to the thread's personal switching fiber
+    //! @return Fiber *  ptr to fiber
 	Fiber * GetSwitchFiber(void) const;
+    //! Getter to the thread's personal counter waiting fiber
+    //! @return Fiber *  ptr to fiber
 	Fiber * GetCounterFiber(void) const;
 
 private:
