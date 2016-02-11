@@ -27,6 +27,11 @@
 *.out
 *.app
 
+# Google test Libs
+!Dependencies/lib/gtest.lib
+!Dependencies/lib/gtestd.lib
+
+
 # =========================
 # Operating System Files
 # =========================
